@@ -1,8 +1,9 @@
 package one.digitalinnovationexperts.productcatalog.config;
 
-
 import org.elasticsearch.client.RestHighLevelClient;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.data.elasticsearch.core.EntityMapper;
 import org.springframework.data.elasticsearch.client.ClientConfiguration;
 import org.springframework.data.elasticsearch.client.RestClients;
 import org.springframework.data.elasticsearch.config.AbstractElasticsearchConfiguration;
@@ -21,5 +22,12 @@ public class ElasticSearchConfig extends AbstractElasticsearchConfiguration {
         return RestClients.create(clientConfiguration).rest();
     }
 
-    
+    @Bean
+    @Override
+    public EntityMapper entityMapper(){
+
+    }
+
+
+
 }
